@@ -1,0 +1,385 @@
+{
+  "dataset": "Z-Anatomy",
+  "license": "CC-BY-SA-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "basedOn": {
+    "dataset": "BodyParts3D / Anatomography",
+    "license": "CC-BY-SA-2.1-JP",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en"
+  },
+  "credit": "Z-Anatomy (CC BY-SA 4.0), based in part on BodyParts3D, © The Database Center for Life Science (CC BY-SA 2.1 Japan). Adapted by OrganUI.",
+  "retrieved": "2026-10-16",
+  "source": {
+    "repository": "https://github.com/LluisV/Z-Anatomy",
+    "commit": "6c7f9016bd5899ac8edafd31b9900c151df42ed6",
+    "files": [
+      {
+        "name": "SkeletalSystem100",
+        "path": "Resources/Models/FBX/SkeletalSystem100.fbx",
+        "url": "https://raw.githubusercontent.com/LluisV/Z-Anatomy/6c7f9016bd5899ac8edafd31b9900c151df42ed6/Resources/Models/FBX/SkeletalSystem100.fbx",
+        "gitBlob": "7c62e45211bf3992bb7239170343e06e2b073865",
+        "sha256": "294a649765cd060a62a4095da52b9c8ef2d97769aa447e196448aa5f7d596dea",
+        "bytes": 41339660
+      },
+      {
+        "name": "VisceralSystem100",
+        "path": "Resources/Models/FBX/VisceralSystem100.fbx",
+        "url": "https://raw.githubusercontent.com/LluisV/Z-Anatomy/6c7f9016bd5899ac8edafd31b9900c151df42ed6/Resources/Models/FBX/VisceralSystem100.fbx",
+        "gitBlob": "355770ae46123044c85deca03de3fb880b8f7301",
+        "sha256": "22b301c93327929c9a14ee582d1848b550a950376e221a6d1078c7256bb83d0e",
+        "bytes": 18401708
+      },
+      {
+        "name": "NervousSystem100",
+        "path": "Resources/Models/FBX/NervousSystem100.fbx",
+        "url": "https://raw.githubusercontent.com/LluisV/Z-Anatomy/6c7f9016bd5899ac8edafd31b9900c151df42ed6/Resources/Models/FBX/NervousSystem100.fbx",
+        "gitBlob": "4ec6e3cb2a1ba821aca02c1d523ac614fdf41a02",
+        "sha256": "3ea1aad64956cad27348a27b8fb50494b7cc307c6bc77bee0810ec2a67dff2b1",
+        "bytes": 53887724
+      }
+    ]
+  },
+  "transform": {
+    "sourceBoundsCm": {
+      "min": [
+        -6.118899822235107,
+        153.74440002441406,
+        0.22515419125556946
+      ],
+      "max": [
+        6.118899345397949,
+        166,
+        11.576693534851074
+      ]
+    },
+    "centerCm": [
+      -2.384185791015625e-7,
+      159.87220001220703,
+      5.900923863053322
+    ],
+    "scale": 0.25,
+    "axes": "[x, y, z]",
+    "frontalCropYCm": 166
+  },
+  "runtime": {
+    "file": "nose.glb",
+    "bytes": 3795692,
+    "sha256": "659b794e1d8af8eb3516042b5ea6bc49b665e12131541a41c94861deddc1d30c"
+  },
+  "structures": [
+    {
+      "id": "nasal-bones",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Nasal_boner",
+          "vertices": 148,
+          "triangles": 292
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Nasal_bonel",
+          "vertices": 148,
+          "triangles": 292
+        }
+      ]
+    },
+    {
+      "id": "lateral-cartilages",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Lateral_process_of_nasal_septal_cartilager",
+          "vertices": 174,
+          "triangles": 347
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Lateral_process_of_nasal_septal_cartilagel",
+          "vertices": 174,
+          "triangles": 347
+        }
+      ]
+    },
+    {
+      "id": "alar-cartilages",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Major_alar_cartilager",
+          "vertices": 174,
+          "triangles": 344
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Major_alar_cartilagel",
+          "vertices": 174,
+          "triangles": 344
+        }
+      ]
+    },
+    {
+      "id": "septal-cartilage",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Nasal_septal_cartilage",
+          "vertices": 182,
+          "triangles": 360
+        }
+      ]
+    },
+    {
+      "id": "vomer",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Vomer",
+          "vertices": 513,
+          "triangles": 1022
+        }
+      ]
+    },
+    {
+      "id": "nasal-cavity",
+      "objects": [
+        {
+          "file": "VisceralSystem100",
+          "object": "Mucosa_of_nasal_cavity",
+          "vertices": 4860,
+          "triangles": 9808
+        }
+      ]
+    },
+    {
+      "id": "inferior-conchae",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Inferior_nasal_concha_boner",
+          "vertices": 238,
+          "triangles": 476
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Inferior_nasal_concha_bonel",
+          "vertices": 238,
+          "triangles": 476
+        }
+      ]
+    },
+    {
+      "id": "palatine-bones",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Palatine_boner",
+          "vertices": 732,
+          "triangles": 1460
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Palatine_bonel",
+          "vertices": 732,
+          "triangles": 1460
+        }
+      ]
+    },
+    {
+      "id": "lacrimal-bones",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Lacrimal_boner",
+          "vertices": 296,
+          "triangles": 588
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Lacrimal_bonel",
+          "vertices": 296,
+          "triangles": 588
+        }
+      ]
+    },
+    {
+      "id": "olfactory-nerves",
+      "objects": [
+        {
+          "file": "NervousSystem100",
+          "object": "Olfactory_nerve_(I)r",
+          "vertices": 13524,
+          "triangles": 26956
+        },
+        {
+          "file": "NervousSystem100",
+          "object": "Olfactory_nerve_(I)l",
+          "vertices": 13524,
+          "triangles": 26956
+        }
+      ]
+    },
+    {
+      "id": "frontal-sinuses",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Sinus_of_frontal_bone",
+          "vertices": 770,
+          "triangles": 1504
+        }
+      ]
+    },
+    {
+      "id": "anterior-ethmoid-cells",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Anterior_cells_of_ethmoid_boner",
+          "vertices": 372,
+          "triangles": 736
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Anterior_cells_of_ethmoid_bonel",
+          "vertices": 372,
+          "triangles": 736
+        }
+      ]
+    },
+    {
+      "id": "middle-ethmoid-cells",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Middle_cells_of_ethmoid_boner",
+          "vertices": 484,
+          "triangles": 960
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Middle_cells_of_ethmoid_bonel",
+          "vertices": 484,
+          "triangles": 960
+        }
+      ]
+    },
+    {
+      "id": "posterior-ethmoid-cells",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Posterior_cells_of_ethmoid_boner",
+          "vertices": 614,
+          "triangles": 1216
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Posterior_cells_of_ethmoid_bonel",
+          "vertices": 614,
+          "triangles": 1216
+        }
+      ]
+    },
+    {
+      "id": "maxillary-sinuses",
+      "objects": [],
+      "illustrative": {
+        "carvedFrom": "maxillae",
+        "volumeMl": 9.9,
+        "triangles": 46448,
+        "wallCm": 0.15,
+        "region": "the body of each maxilla, lateral to the nasal cavity, above the tooth roots and below the orbit"
+      }
+    },
+    {
+      "id": "sphenoid-sinus",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Sinus_of_sphenoid_bone",
+          "vertices": 210,
+          "triangles": 384
+        }
+      ]
+    },
+    {
+      "id": "frontal-bone",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Frontal_bone",
+          "vertices": 3902,
+          "triangles": 7776
+        }
+      ]
+    },
+    {
+      "id": "ethmoid",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Ethmoid_bone",
+          "vertices": 5082,
+          "triangles": 5042
+        }
+      ]
+    },
+    {
+      "id": "maxillae",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Maxillar",
+          "vertices": 2399,
+          "triangles": 4798
+        },
+        {
+          "file": "SkeletalSystem100",
+          "object": "Maxillal",
+          "vertices": 2399,
+          "triangles": 4798
+        }
+      ]
+    },
+    {
+      "id": "sphenoid-bone",
+      "objects": [
+        {
+          "file": "SkeletalSystem100",
+          "object": "Sphenoid_bone",
+          "vertices": 3648,
+          "triangles": 7308
+        }
+      ]
+    },
+    {
+      "id": "pituitary",
+      "objects": [
+        {
+          "file": "VisceralSystem100",
+          "object": "Adenohypophysis",
+          "vertices": 369,
+          "triangles": 680
+        },
+        {
+          "file": "VisceralSystem100",
+          "object": "Neurohypophysis",
+          "vertices": 325,
+          "triangles": 592
+        }
+      ]
+    },
+    {
+      "id": "nasopharynx",
+      "objects": [
+        {
+          "file": "VisceralSystem100",
+          "object": "Nasopharynx",
+          "vertices": 978,
+          "triangles": 1952
+        }
+      ]
+    }
+  ]
+}
