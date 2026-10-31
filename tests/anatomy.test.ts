@@ -3,8 +3,12 @@ import { byId, emphasis, sourceObjects, structures } from '../src/anatomy'
 import { sinusRecipes } from '../scripts/sinuses'
 
 describe('selection emphasis', () => {
-  test('keeps every structure normal without a selection', () => {
-    expect(structures.every((s) => emphasis(s.id, null) === 'normal')).toBe(true)
+  test('keeps every structure normal without a selection, except context bones', () => {
+    expect(
+      structures.every((s) => emphasis(s.id, null) === (s.context ? 'context' : 'normal')),
+    ).toBe(true)
+    expect(emphasis('frontal-bone', null)).toBe('context')
+    expect(emphasis('frontal-bone', 'frontal-bone')).toBe('selected')
   })
 
   test('keeps the selection solid and ghosts everything else', () => {

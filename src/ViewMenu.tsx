@@ -2,7 +2,7 @@ import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
 import { Check, ChevronDown } from 'lucide-react'
 import type { View } from './anatomy'
 
-const views: View[] = ['Anterior', 'Oblique', 'Lateral']
+const views: View[] = ['Anterior', 'Oblique', 'Left lateral']
 
 export default function ViewMenu({
   view,

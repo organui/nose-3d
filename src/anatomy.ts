@@ -20,6 +20,9 @@ export type Structure = {
   color: string
   description: string
   note: string
+  // Drawn translucent while nothing is selected, so it frames the nose
+  // without hiding the structures behind it.
+  context?: boolean
 }
 
 export const anatomySource = 'https://training.seer.cancer.gov/head-neck/anatomy/sinuses.html'
@@ -197,6 +200,7 @@ export const structures: Structure[] = [
     group: 'Sinus bones',
     sources: skeletal('Frontal_bone'),
     color: '#ece4d2',
+    context: true,
     description:
       'The bone of the forehead and the roofs of the orbits. It holds the frontal sinuses.',
     note: 'Cut about 5 cm above the root of the nose so the nose fills the view. The rest of the skull is omitted.',
@@ -263,7 +267,7 @@ export const groups = [
 export const byId = Object.fromEntries(structures.map((s) => [s.id, s]))
 export const sourceObjects = (s: Structure) =>
   s.sources.flatMap(({ file, objects }) => objects.map((o) => `${file}/${o}`))
-export type View = 'Anterior' | 'Oblique' | 'Lateral'
+export type View = 'Anterior' | 'Oblique' | 'Left lateral'
 // The nose's depth only reads from an angle, so the explorer opens obliquely.
 export const defaultView: View = 'Oblique'
 export const tour: { id: string; title: string; text: string; view: View; isolate?: boolean }[] = [
@@ -277,13 +281,13 @@ export const tour: { id: string; title: string; text: string; view: View; isolat
     id: 'septal-cartilage',
     title: 'The wall down the middle',
     text: 'The septum divides the nose into two passages. Cartilage forms its front; the vomer and the ethmoid bone form the back.',
-    view: 'Lateral',
+    view: 'Left lateral',
   },
   {
     id: 'nasal-cavity',
     title: 'The airway',
     text: 'The lining of the nasal cavity is isolated here. It shows how far the nasal passages reach, from just inside the nostrils back to the throat. Restore all to see the bones around it.',
-    view: 'Lateral',
+    view: 'Left lateral',
     isolate: true,
   },
   {
@@ -296,15 +300,15 @@ export const tour: { id: string; title: string; text: string; view: View; isolat
     id: 'sphenoid-sinus',
     title: 'Deep behind the nose',
     text: 'The sphenoid sinus lies at the centre of the skull, right behind the nasal cavity and just under the pituitary gland.',
-    view: 'Lateral',
+    view: 'Left lateral',
   },
 ]
 
-export type Emphasis = 'normal' | 'selected' | 'ghosted'
+export type Emphasis = 'normal' | 'context' | 'selected' | 'ghosted'
 // With nothing selected every structure keeps its own color. A selection
 // keeps its structure solid and ghosts the rest so it stays visible even
 // when it sits behind or inside other geometry (sinuses, septum, airway).
 export function emphasis(id: string, selected: string | null): Emphasis {
-  if (!selected) return 'normal'
+  if (!selected) return byId[id]?.context ? 'context' : 'normal'
   return id === selected ? 'selected' : 'ghosted'
 }
