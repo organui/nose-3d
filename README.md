@@ -40,11 +40,11 @@ The app is static and uses relative build paths. No deployment has been performe
 - Keyboard: Tab/Enter for controls, arrow keys to rotate the focused model, `+`/`-` to zoom, Escape closes the panel and returns focus to its toggle.
 
 <details>
-<summary>Sinus selection, lateral view and mobile screenshots</summary>
+<summary>Sinus selection, left lateral view and mobile screenshots</summary>
 
 ![Frontal sinuses selected with the rest ghosted](docs/screenshots/anatomy.png)
 
-![Lateral view with the sphenoid sinus selected](docs/screenshots/lateral.png)
+![Left lateral view with the sphenoid sinus selected](docs/screenshots/lateral.png)
 
 <img src="docs/screenshots/mobile.png" alt="Mobile nose explorer" width="300" />
 

@@ -105,11 +105,11 @@ function CameraControls({
     const directionFor = (view: View) =>
       new Vector3(
         // Display +x is the patient's left, so Lateral looks at the left side.
-        ...((view === 'Lateral' ? [1, 0, 0] : view === 'Oblique' ? [0.85, 0.2, 1] : [0, 0, 1]) as [
-          number,
-          number,
-          number,
-        ]),
+        ...((view === 'Left lateral'
+          ? [1, 0, 0]
+          : view === 'Oblique'
+            ? [0.85, 0.2, 1]
+            : [0, 0, 1]) as [number, number, number]),
       ).normalize()
     const fit = (direction: Vector3) =>
       Math.min(

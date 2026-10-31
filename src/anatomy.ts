@@ -263,7 +263,7 @@ export const groups = [
 export const byId = Object.fromEntries(structures.map((s) => [s.id, s]))
 export const sourceObjects = (s: Structure) =>
   s.sources.flatMap(({ file, objects }) => objects.map((o) => `${file}/${o}`))
-export type View = 'Anterior' | 'Oblique' | 'Lateral'
+export type View = 'Anterior' | 'Oblique' | 'Left lateral'
 // The nose's depth only reads from an angle, so the explorer opens obliquely.
 export const defaultView: View = 'Oblique'
 export const tour: { id: string; title: string; text: string; view: View; isolate?: boolean }[] = [
@@ -277,13 +277,13 @@ export const tour: { id: string; title: string; text: string; view: View; isolat
     id: 'septal-cartilage',
     title: 'The wall down the middle',
     text: 'The septum divides the nose into two passages. Cartilage forms its front; the vomer and the ethmoid bone form the back.',
-    view: 'Lateral',
+    view: 'Left lateral',
   },
   {
     id: 'nasal-cavity',
     title: 'The airway',
     text: 'The lining of the nasal cavity is isolated here. It shows how far the nasal passages reach, from just inside the nostrils back to the throat. Restore all to see the bones around it.',
-    view: 'Lateral',
+    view: 'Left lateral',
     isolate: true,
   },
   {
@@ -296,7 +296,7 @@ export const tour: { id: string; title: string; text: string; view: View; isolat
     id: 'sphenoid-sinus',
     title: 'Deep behind the nose',
     text: 'The sphenoid sinus lies at the centre of the skull, right behind the nasal cavity and just under the pituitary gland.',
-    view: 'Lateral',
+    view: 'Left lateral',
   },
 ]
 
