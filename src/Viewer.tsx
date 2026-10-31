@@ -3,8 +3,10 @@ import { useFrame, useThree, type ThreeEvent } from '@react-three/fiber'
 import {
   Box3,
   Color,
+  DoubleSide,
   Group,
   Mesh,
+  MeshBasicMaterial,
   MeshStandardMaterial,
   PerspectiveCamera,
   Spherical,
@@ -191,6 +193,22 @@ function ghostColor(color: string) {
   return value
 }
 
+// A depth-only copy drawn first lets a translucent context mesh show as one
+// clean layer instead of dark bands where its own surfaces overlap.
+const depthOnly = new MeshBasicMaterial({ colorWrite: false, side: DoubleSide, transparent: true })
+function depthPrepass(mesh: Mesh, enabled: boolean) {
+  let prepass = mesh.userData.depthPrepass as Mesh | undefined
+  if (enabled && !prepass) {
+    prepass = new Mesh(mesh.geometry, depthOnly)
+    prepass.raycast = () => {}
+    prepass.renderOrder = 1
+    mesh.userData.depthPrepass = prepass
+    mesh.add(prepass)
+  }
+  if (prepass) prepass.visible = enabled
+  mesh.renderOrder = enabled ? 2 : 0
+}
+
 function Model({
   model,
   selected,
@@ -210,9 +228,10 @@ function Model({
       material.color.set(state === 'ghosted' ? ghostColor(structure.color) : structure.color)
       material.emissive.set(state === 'selected' ? structure.color : '#000000')
       material.emissiveIntensity = state === 'selected' ? 0.35 : 0
-      material.transparent = state === 'ghosted'
-      material.opacity = state === 'ghosted' ? 0.22 : 1
-      material.depthWrite = state !== 'ghosted'
+      material.transparent = state === 'ghosted' || state === 'context'
+      material.opacity = state === 'ghosted' ? 0.22 : state === 'context' ? 0.4 : 1
+      material.depthWrite = state === 'normal' || state === 'selected'
+      depthPrepass(object, state === 'context')
       material.roughness = 0.58
       material.needsUpdate = true
     })

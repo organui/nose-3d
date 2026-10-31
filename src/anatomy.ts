@@ -20,6 +20,9 @@ export type Structure = {
   color: string
   description: string
   note: string
+  // Drawn translucent while nothing is selected, so it frames the nose
+  // without hiding the structures behind it.
+  context?: boolean
 }
 
 export const anatomySource = 'https://training.seer.cancer.gov/head-neck/anatomy/sinuses.html'
@@ -197,6 +200,7 @@ export const structures: Structure[] = [
     group: 'Sinus bones',
     sources: skeletal('Frontal_bone'),
     color: '#ece4d2',
+    context: true,
     description:
       'The bone of the forehead and the roofs of the orbits. It holds the frontal sinuses.',
     note: 'Cut about 5 cm above the root of the nose so the nose fills the view. The rest of the skull is omitted.',
@@ -300,11 +304,11 @@ export const tour: { id: string; title: string; text: string; view: View; isolat
   },
 ]
 
-export type Emphasis = 'normal' | 'selected' | 'ghosted'
+export type Emphasis = 'normal' | 'context' | 'selected' | 'ghosted'
 // With nothing selected every structure keeps its own color. A selection
 // keeps its structure solid and ghosts the rest so it stays visible even
 // when it sits behind or inside other geometry (sinuses, septum, airway).
 export function emphasis(id: string, selected: string | null): Emphasis {
-  if (!selected) return 'normal'
+  if (!selected) return byId[id]?.context ? 'context' : 'normal'
   return id === selected ? 'selected' : 'ghosted'
 }
